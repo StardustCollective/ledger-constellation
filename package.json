@@ -1,8 +1,9 @@
 {
   "name": "constellation-ledger-refjs",
-  "description": "constellation javascript library",
+  "description": "ledger constellation javascript library",
   "version": "1.0.3",
   "module": "index.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/StardustCollective/constellation-ledger-refjs"
@@ -13,14 +14,14 @@
     "itest": "./node_modules/mocha/bin/mocha -t 100000 test/integration",
     "test": "./node_modules/mocha/bin/mocha -t 100000 test/unit",
     "coverage": "nyc -x 'test/util/**' -x 'test/unit/**' ./node_modules/mocha/bin/mocha -t 100000 test/unit",
-    "start": "node main.js",
+    "start": "node index.js",
     "docs": "./node_modules/documentation/bin/documentation.js build --config documentation.yaml documentation.js -f md -o docs/documentation.md"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^6.1.0",
+    "@ledgerhq/hw-transport-node-hid-singleton": "^6.27.2",
     "babel-polyfill": "^6.26.0",
     "bip32": "^2.0.6",
     "bip39": "^3.0.4",
