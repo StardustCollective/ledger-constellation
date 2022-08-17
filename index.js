@@ -1,5 +1,4 @@
 import { signTransaction, getPublicKey } from "./libs/LedgerConstellation.js";
-import transport from "@ledgerhq/hw-transport-node-hid-singleton";
 import http from "http";
 
 class index {
