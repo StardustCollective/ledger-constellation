@@ -1,7 +1,7 @@
 {
-  "name": "Ledger-Constellation-Transport-Interface",
-  "description": "ledger constellation javascript library",
-  "version": "1.0.3",
+  "name": "ledger-constellation-transport-interface",
+  "description": "ledger constellation transport interface library",
+  "version": "1.0.0",
   "module": "index.js",
   "type": "module",
   "repository": {
