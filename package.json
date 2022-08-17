@@ -10,7 +10,7 @@
   },
   "scripts": {
     "eslint": "eslint --fix 'scripts/**/*.js'",
-    "eslint-unit-test": "eslint --fix 'test/unit/**/*.js'",
+    "eslint-unit-test": "eslint --fix 'test/unit/**/*.js'"
   },
   "keywords": [],
   "author": "",
