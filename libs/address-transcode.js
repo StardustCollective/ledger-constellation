@@ -1,5 +1,7 @@
-import bs58 from 'bs58';
-import Sha256Hash from './sha256-hash.js';
+"use strict";
+
+const bs58 = require('bs58');
+const Sha256Hash = require('./sha256-hash.js');
 
 const DEBUG = false;
 
@@ -60,7 +62,7 @@ const getAddressFromDerPublicKey = (publicKeyHex) => {
   return 'DAG' + par + end;
 };
 
-export default {
+module.exports = {
   getAddressFromRawPublicKey,
   getAddressFromDerPublicKey,
 };

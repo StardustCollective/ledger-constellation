@@ -1,7 +1,8 @@
-import { signTransaction, getPublicKey } from "./libs/LedgerConstellation.js";
-import http from "http";
+"user strict";
 
-class index {
+const LedgerConstellation = require("./libs/LedgerConstellation.js");
+const http = require("http");
+class Index {
   constructor(transport, debug) {
     if (!transport) {
       throw "Error: Missing Transport";
@@ -17,7 +18,11 @@ class index {
   }
 
   async signTransaction(amount, toAddress) {
-    const response = await signTransaction(this.config, amount, toAddress);
+    const response = await LedgerConstellation.signTransaction(
+      this.config,
+      amount,
+      toAddress
+    );
     if (response.success) {
       if (this.config.debug) {
         console.log("Signature: ", response.signature);
@@ -32,7 +37,7 @@ class index {
   async signMessage() {}
 
   async getPublicKey() {
-    const response = await getPublicKey(this.config);
+    const response = await LedgerConstellation.getPublicKey(this.config);
     if (response.success) {
       if (this.config.debug) {
         console.log("Public Key: ", response.publicKey);
@@ -44,4 +49,4 @@ class index {
   }
 }
 
-export default index;
+module.exports = Index;

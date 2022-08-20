@@ -143,7 +143,8 @@ const post = async (config, path, formData) => {
     req.end();
   });
 };
-export default {
+
+module.exports = {
   get,
   post
 };

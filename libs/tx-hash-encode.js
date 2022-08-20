@@ -1,3 +1,5 @@
+"use strict";
+
 // libraries
 
 // modules
@@ -58,6 +60,6 @@ const encodeTxHash = (tx, hashReference) => {
   return encodedTx;
 };
 
-export default {
+module.exports = {
   encodeTxHash
 };

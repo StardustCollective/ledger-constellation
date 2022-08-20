@@ -74,7 +74,7 @@ const finishLedgerDeviceInfo = (msg) => {
 const getLedgerDeviceInfo = (transport, callback) => {
   const deviceThenCallback = (device) => {
     try {
-      const deviceInfo = transport.default.getDeviceInfo();
+      const deviceInfo = transport.getDeviceInfo();
       callback(finishLedgerDeviceInfo({
         enabled: true,
         error: false,
@@ -98,7 +98,7 @@ const getLedgerDeviceInfo = (transport, callback) => {
 };
 
 const getLedgerInfo = (transport, deviceThenCallback, deviceErrorCallback) => {
-  const supported = transport.default.isSupported();
+  const supported = transport.isSupported();
   if (!supported) {
     deviceErrorCallback(finishLedgerDeviceInfo({
       enabled: false,
@@ -108,7 +108,7 @@ const getLedgerInfo = (transport, deviceThenCallback, deviceErrorCallback) => {
     return;
   }
 
-  transport.default.list().then((paths) => {
+  transport.list().then((paths) => {
     if (paths.length === 0) {
       deviceErrorCallback(finishLedgerDeviceInfo({
         enabled: false,
@@ -118,7 +118,7 @@ const getLedgerInfo = (transport, deviceThenCallback, deviceErrorCallback) => {
     } else {
       const path = paths[0];
       // console.log('path', path);
-      transport.default.open(path).then((device) => {
+      transport.open(path).then((device) => {
         // console.trace('deviceThenCallback', deviceThenCallback, device);
         deviceThenCallback(device);
       }, (error) => {
@@ -346,7 +346,7 @@ const sign = (transport, transactionHex, callback) => {
   getLedgerInfo(transport, deviceThenCallback, deviceErrorCallback);
 };
 
-export default {
+module.exports = {
   getLedgerDeviceInfo,
   getPublicKey,
   sign

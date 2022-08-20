@@ -1,3 +1,4 @@
+"use strict";
 
 const bytesToHex = (bytes) => {
   return Array.prototype.map.call(bytes, (x) => ('00' + x.toString(16)).slice(-2)).join('').toUpperCase();
@@ -239,7 +240,7 @@ const decodeTx = (tx) => {
   return decodedTx;
 };``
 
-export default {
+module.exports = {
   encodeTx,
   decodeTx,
 };

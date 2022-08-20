@@ -3,7 +3,6 @@
   "description": "ledger constellation transport interface library",
   "version": "1.0.0",
   "module": "index.js",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/StardustCollective/constellation-ledger-refjs"

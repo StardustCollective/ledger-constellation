@@ -1,9 +1,11 @@
-import crypto from "crypto";
+"user strict";
+
+const crypto = require('crypto');
 
 const sha256Hash = (buffer) => {
   return crypto.createHash("sha256").update(buffer).digest();
 };
 
-export default {
+module.exports = {
   sha256Hash,
 };

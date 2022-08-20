@@ -1,10 +1,10 @@
 "use strict";
 
-import ledgerCommUtil from "./ledger-comm.js";
-import integrationUtil from "./integration.js";
-import addressTranscodeUtil from "./address-transcode.js";
-import txTranscodeUtil from "./tx-transcode.js";
-import txHashEncodeUtil from "./tx-hash-encode.js";
+const ledgerCommUtil = require("./ledger-comm.js");
+const integrationUtil = require("./integration.js");
+const addressTranscodeUtil = require("./address-transcode.js");
+const txTranscodeUtil = require("./tx-transcode.js");
+const txHashEncodeUtil = require("./tx-hash-encode.js");
 
 const getPublicKey = async (config) => {
   return new Promise((resolve, reject) => {
@@ -190,5 +190,7 @@ const signTransactionCallback = async (
   }
 };
 
-export default {};
-export { signTransaction, getPublicKey };
+module.exports = {
+  signTransaction, 
+  getPublicKey
+};
